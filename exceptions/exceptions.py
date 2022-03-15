@@ -7,6 +7,7 @@ try:
     #var = bar
 except FileNotFoundError as e:
     print(e)
+# general error
 except Exception as e:
     print('Error', e)
 else:
