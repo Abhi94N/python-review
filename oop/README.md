@@ -1,22 +1,12 @@
 # python-review
 
-# Simple class with no attribute or methods
+## Simple class with no attribute or methods
 ```
 Class Employee:
   pass
 ```
 
-# Instances of employee
-```
-emp_1 = Employee()
-emp_2 = Employee()
-```
-
-# Instance variables
-
-- Contain data that is unique to each instance
-
-# Identifies the constructor
+## Identifies the constructor
 ```
   def __init__(self, args...):
 ```
@@ -25,4 +15,26 @@ emp_2 = Employee()
 
 ```
 Employee.fullname(emp_1)
+```
+# Instances of employee
+```
+emp_1 = Employee()
+emp_2 = Employee()
+```
+
+## Instance variables and methods
+
+- Contain data that is unique to each instance
+
+## Class Methods
+- Update data for class to collect data across instances
+
+```
+Employee.num_of_emps += 1
+```
+```
+#Prints out instance attributes
+print(emp_1.__dict__)
+#Prints out class values and aspects of class
+print(Employee.__dict__)
 ```
