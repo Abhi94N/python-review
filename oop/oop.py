@@ -1,7 +1,10 @@
 # Python Object-Oriented Programming
 
 import datetime
+import logging
 
+logging.basicConfig(filename='employee.log',level=logging.INFO, 
+                    format='%(levelname)s:%(message)s')
 
 class Employee:
     
@@ -12,6 +15,9 @@ class Employee:
         self.last = last
         self.pay = pay
         Employee.num_of_emps += 1
+        
+        #pass info
+        logging.info(f'Created Employee: {self.fullname} - {self.email}')
     
     @property
     def fullname(self):
@@ -70,19 +76,20 @@ class Employee:
 emp_1 = Employee('Abhi', 'Nair', 50000)
 emp_2 = Employee('Test', 'User', 60000)
 
-emp_1.first = 'Jim'
-print(emp_1.first)
-print(emp_1.last)
-print(emp_1.email)
-print(emp_1.fullname)
+
+# emp_1.first = 'Jim'
+# print(emp_1.first)
+# print(emp_1.last)
+# print(emp_1.email)
+# print(emp_1.fullname)
 
 # apply setters
-emp_1.fullname = 'Abhi Nair'
-print(emp_1.first)
-print(emp_1.last)
-print(emp_1.fullname)
-del emp_1.fullname
-print(emp_1.fullname)
+# emp_1.fullname = 'Abhi Nair'
+# print(emp_1.first)
+# print(emp_1.last)
+# print(emp_1.fullname)
+# del emp_1.fullname
+# print(emp_1.fullname)
 
 
 
@@ -135,17 +142,17 @@ print(emp_1.fullname)
 # self is the same as the instance of the object
 #print(Employee.fullname(emp_1))
 
-emp_str_1 = 'Abhi-Nair-700000'
-emp_str_2 = 'John-Doe-30000'
-emp_str_3 = 'Jane_Doe-90000'
+# emp_str_1 = 'Abhi-Nair-700000'
+# emp_str_2 = 'John-Doe-30000'
+# emp_str_3 = 'Jane_Doe-90000'
 
-first,last,pay = emp_str_1.split('-')
-new_emp_1 = Employee(first,last,pay)
+# first,last,pay = emp_str_1.split('-')
+# new_emp_1 = Employee(first,last,pay)
 # print(new_emp_1.email)
 # print(new_emp_1.pay)
 
 # create construtor from class method
-new_emp_2 = Employee.from_string(emp_str_2)
+# new_emp_2 = Employee.from_string(emp_str_2)
 # print(new_emp_2.email)
 # print(new_emp_2.pay)
 #my_date = datetime.date(2022,3,14)
