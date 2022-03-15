@@ -1,6 +1,9 @@
-from oop import Employee
+from employee import Employee
 from developer import Developer
+import logging
 
+logging.basicConfig(filename='employee.log',level=logging.INFO, 
+                    format='%(levelname)s:%(message)s')
 class Manager(Employee):
     raise_amt = 1.10
     
@@ -10,7 +13,7 @@ class Manager(Employee):
             self.employees = []
         else:
             self.employees = employees
-    
+        logging.info(f'Created Manager: {self.fullname} - {self.__repr__()}')    
     def add_emp(self, emp):
         if emp not in self.employees:
             self.employees.append(emp)
@@ -26,7 +29,7 @@ class Manager(Employee):
     def list_employees(self):
         employees = 'Employees: '
         for emp in self.employees:
-            employees += '{},'.format(emp.fullname())
+            employees += '{},'.format(emp.fullname)
         return employees
 
     def __repr__(self):
@@ -36,7 +39,7 @@ class Manager(Employee):
     
     def __str__(self):
         # used for end user
-        return '{} - {} - {}'.format(self.fullname(), self.email, self.list_employees())
+        return '{} - {} - {}'.format(self.fullname, self.email, self.list_employees())
 
 
     
