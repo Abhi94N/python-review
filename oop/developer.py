@@ -1,4 +1,4 @@
-from oop import Employee
+from employee import Employee
 import logging
 
 logging.basicConfig(filename='employee.log',level=logging.INFO, 
@@ -9,7 +9,7 @@ class Developer(Employee):
     def __init__(self,first, last, pay, prog_lang):
         super().__init__(first,last, pay)
         self.prog_lang = prog_lang
-        logging.info(f'Created Employee: {self.fullname} - {self.__repr__()}')
+        logging.info(f'Created Developer: {self.fullname} - {self.__repr__()}')
 
     def __repr__(self):
         # unambiguous representation of object for logging and for developers

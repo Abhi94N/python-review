@@ -3,8 +3,21 @@
 import datetime
 import logging
 
-logging.basicConfig(filename='employee.log',level=logging.INFO, 
-                    format='%(levelname)s:%(message)s')
+# equals module that calls it. by default it is main but can be different module when called
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# passing this to for file_handler and not formatter
+formatter = logging.Formatter('%(levelname)s:%(name)s:%(message)s')
+
+# file handler
+file_handler = logging.FileHandler('employee.log')
+file_handler.setFormatter(formatter)
+# adds handler
+logger.addHandler(file_handler)
+
+#logging.basicConfig(filename='employee.log',level=logging.INFO, 
+#                    format='%(levelname)s:%(name)s:%(message)s')
 
 class Employee:
     
@@ -17,7 +30,7 @@ class Employee:
         Employee.num_of_emps += 1
         
         #pass info
-        logging.info(f'Created Employee: {self.fullname} - {self.email}')
+        logger.info(f'Created Employee: {self.fullname} - {self.email}')
     
     @property
     def fullname(self):

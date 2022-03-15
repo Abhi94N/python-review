@@ -1,0 +1,32 @@
+2022-03-15 02:16:15,283:INFO:Add: 20 + 5 = 25
+2022-03-15 02:16:15,283:INFO:Add: 20 - 5 = 15
+2022-03-15 02:16:15,283:INFO:Add: 20 * 5 = 100
+2022-03-15 02:16:15,283:INFO:Add: 20 / 5 = 4.0
+INFO:root:Add: 20 + 5 = 25
+INFO:root:Add: 20 - 5 = 15
+INFO:root:Add: 20 * 5 = 100
+INFO:root:Add: 20 / 5 = 4.0
+2022-03-15 02:19:48,539:INFO:root:Add: 20 + 5 = 25
+2022-03-15 02:19:48,539:INFO:root:Add: 20 - 5 = 15
+2022-03-15 02:19:48,539:INFO:root:Add: 20 * 5 = 100
+2022-03-15 02:19:48,539:INFO:root:Add: 20 / 5 = 4.0
+2022-03-15 02:21:50,641:INFO:__main__:Add: 20 + 5 = 25
+2022-03-15 02:21:50,641:INFO:__main__:Add: 20 - 5 = 15
+2022-03-15 02:21:50,641:INFO:__main__:Add: 20 * 5 = 100
+2022-03-15 02:21:50,641:INFO:__main__:Add: 20 / 5 = 4.0
+2022-03-15 02:24:39,662:ERROR:__main__:Tried to divide by zero
+2022-03-15 02:25:38,491:ERROR:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "log-sample.py", line 42, in divide
+    result = x/y
+ZeroDivisionError: division by zero
+2022-03-15 02:26:41,918:ERROR:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "log-sample.py", line 47, in divide
+    result = x/y
+ZeroDivisionError: division by zero
+2022-03-15 02:27:35,500:ERROR:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "log-sample.py", line 48, in divide
+    result = x/y
+ZeroDivisionError: division by zero
