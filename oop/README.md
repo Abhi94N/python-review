@@ -109,3 +109,32 @@ print(Employee.__dict__)
   - [special methods]('https://docs.python.org/3/reference/datamodel.html#special-method-names')
 
 ## Decorators - Getter, Setters, Deleters
+
+  - `@property decorator allows us to call methods as if it is a property. this is essentially a getter
+  
+  ```python
+      @property
+      def email(self):
+          return '{}.{}@email.com'.format(self.first,self.last)
+      
+      print(emp_1.email)
+  ```
+
+  - @property.setter allows us to update the property
+  ```python
+    @fullname.setter
+    def fullname(self, name):
+        first, last = name.split(' ')
+        self.first = first
+        self.last = last
+    emp_1.fullname = 'Abhi Nair'
+  ```
+  - @delete.setter allows us to delete a property
+  ```python
+    @fullname.deleter
+    def fullname(self):
+        print('Delete Name!')
+        self.first = None
+        self.last = None
+    del emp_1.fullname
+  ```

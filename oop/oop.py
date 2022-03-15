@@ -11,9 +11,9 @@ class Employee:
         self.first = first
         self.last = last
         self.pay = pay
-        self.email = '{}.{}@company.com'.format(first,last)
         Employee.num_of_emps += 1
     
+    @property
     def fullname(self):
         return '{} {}'.format(self.first, self.last)
     
@@ -34,7 +34,23 @@ class Employee:
     def is_workday(day):
         if day.weekday() == 5 or day.weekday() == 6:
             return False
-        return True    
+        return True
+
+    @property
+    def email(self):
+        return '{}.{}@email.com'.format(self.first,self.last)
+
+    @fullname.setter
+    def fullname(self, name):
+        first, last = name.split(' ')
+        self.first = first
+        self.last = last
+
+    @fullname.deleter
+    def fullname(self):
+        print('Delete Name!')
+        self.first = None
+        self.last = None
 
     def __repr__(self):
         # unambiguous representation of object for logging and for developers
@@ -54,9 +70,21 @@ class Employee:
 emp_1 = Employee('Abhi', 'Nair', 50000)
 emp_2 = Employee('Test', 'User', 60000)
 
+emp_1.first = 'Jim'
 print(emp_1.first)
 print(emp_1.last)
-print(emp_1.fullname())
+print(emp_1.email)
+print(emp_1.fullname)
+
+# apply setters
+emp_1.fullname = 'Abhi Nair'
+print(emp_1.first)
+print(emp_1.last)
+print(emp_1.fullname)
+del emp_1.fullname
+print(emp_1.fullname)
+
+
 
 # test dunder functions
 # print(repr(emp_1))
