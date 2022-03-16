@@ -2,6 +2,7 @@
 
 import datetime
 import logging
+import requests
 
 # equals module that calls it. by default it is main but can be different module when called
 logger = logging.getLogger(__name__)
@@ -38,6 +39,13 @@ class Employee:
     
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amount)
+        
+    def monthly_schedule(self, month):
+        response = requests.get(f'http://company.com/{self.last}/{month}')
+        if response.ok:
+            return response.text
+        else:
+            return 'Bad Response!'
     
     @classmethod
     def set_raise_amt(cls,amount):
