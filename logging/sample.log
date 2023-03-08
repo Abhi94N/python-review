@@ -30,3 +30,28 @@ Traceback (most recent call last):
   File "log-sample.py", line 48, in divide
     result = x/y
 ZeroDivisionError: division by zero
+2022-10-13 21:15:28,139:ERROR:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "log-sample.py", line 48, in divide
+    result = x/y
+ZeroDivisionError: division by zero
+2022-10-13 21:15:54,994:ERROR:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "log-sample.py", line 48, in divide
+    result = x/y
+ZeroDivisionError: division by zero
+2022-10-13 21:16:26,953:ERROR:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "log-sample.py", line 48, in divide
+    result = x/y
+ZeroDivisionError: division by zero
+2022-10-13 21:17:35,652:ERROR:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "log-sample.py", line 48, in divide
+    result = x/y
+ZeroDivisionError: division by zero
+2022-10-13 21:17:42,721:ERROR:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "log-sample.py", line 48, in divide
+    result = x/y
+ZeroDivisionError: division by zero
