@@ -1,7 +1,7 @@
 import logging
 import sys
-sys.path.append('..')
-from oop.employee import Employee
+# sys.path.append('..')
+# from oop.employee import Employee
 
 
 logger = logging.getLogger(__name__)

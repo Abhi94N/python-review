@@ -7,6 +7,7 @@
 - classes should use two instances which you should do `setUp` and `TearDown` methods
 - Always setup and teardown after each test as you don't know when each test would happen
 - `setupClass` and `tearDownClass` class methods will run at the beginning and end
+- use patch
 
 ```python
 import unittest 

@@ -1,0 +1,21 @@
+# pytest
+
+- [100%] represents overall progress of running tests 
+- `pytest -q test_sysexit.py` allows tests to be quiet
+- group multiple tests in a class
+  - alllows you to share fixtures for test and apply marks at a class level
+  - each test must have a unique instance of the class
+    - `test_class_demo.py` - do not do this as class attributes can alter the other test
+- **fixtures** can be set including setting temporary paths 
+  - `pytest --fixtures` - shows builtin and custom fixtures
+  - `fruit_salad = FruitSalad(*fruit_bowl)` - pytest sees this, it will execute the fruit_bowl fixture function and pass the object it returns into test_fruit_salad as the fruit_bowl argument.
+  - can request fixtures in other fixtures
+  - can request multiple fixtures at a time: see test_append_2.py
+  - `@pytest.fixture(autouse=True)` - convenient way to make all tests automatically request them: see test_append_3.py
+- **scope** - allows invocation of function
+  - `@pytest.fixture(scope="module")` - scope can include function, class, module, package, session
+  - teardown code can be run after yield fixtures
+  - yield will pass an object back to the requesting fixture/test 
+  - alternate to yielding you can pass fixutres directly by adding finalizers to the request object
+    - request is a parameter to the fixture and the addfinalizer is the method to the request object
+  - limit fixtures to only preform one state changing action

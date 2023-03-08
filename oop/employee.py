@@ -85,7 +85,7 @@ class Employee:
     
     def __str__(self):
         # used for end user
-        return '{} - {}'.format(self.fullname(), self.email)
+        return '{} - {}'.format(self.fullname, self.email)
 
     # dunder for adding
     def __add__(self,other):
@@ -116,7 +116,7 @@ emp_2 = Employee('Test', 'User', 60000)
 
 # test dunder functions
 # print(repr(emp_1))
-# print(str(emp_2))
+# print(str(emp_1))
 
 # print(emp_1.__repr__())
 # print(emp_2.__str__())
