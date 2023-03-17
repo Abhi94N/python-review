@@ -1,0 +1,73 @@
+## Patterns
+
+- Categories of patterns
+  1. Application landscape 
+    - monolith
+      - application consist of an executable that is deployed as a whole
+      - can have additional executable but they are run together
+    - n-tier
+      - splits up application to multiple tiers that are split up to perform a specific task
+      - can be physically seperated
+      - are not layers
+      - have technical boundaries
+      - Presentation tier, business logic tier, data tier
+    - service-oriented
+      - multiple services
+      - each service is a business activity
+      - srevice composability
+      - Contract standardization
+      - Enterprise service bus - shares communication
+    - microservices
+      - multiple services
+      - each is a business activity
+      - teams run the service
+      - no logic heavy enterprise service bus
+      - maximum automation
+      - calls each other directly and is loosely coupled
+    - serverless
+      - backend as a service
+        - authentication, logging, databases
+      - function as a service
+        - messaging system
+      - Scale easily
+    - peer-to-peer
+      - no central server
+      - no constant connection
+      - dynamic discoverability
+      - ideal for sharing resource and cost effective and scaling
+  2. Application structure pattern
+    - Single executable should be built
+    - Layered
+      - several layers with a downward flow
+        - presentation, application, business, persistence, data
+    - Microkernel
+      - has core but also plugins
+      - task scheduler, workflow, data processing, graphic designer, browser
+    - Command Query Responsibility Segregation
+      - two models: read/query and write/command
+      - allow for schenario specific queries
+      - sync required
+      - different from event sourcing
+      - read queries becomes simpler
+    - Event Sourcing
+      - store events instead of current state
+      - event - something that happend in the past
+      - rehydration or replay - apply events in the past to a new object 
+    - Command Query responsibility segregation and event sourcing
+      - add event to seperate read models and write model event handlers
+  3. User Interfaces
+    - MVC
+      - Model - View - Controller
+    - MVP
+      - Model - View - Presenter
+        - presenter interacts with view and model
+    Model-View-ViewModel
+      - ViewModel - interacts with business logic in Model and shares logic into view
+    - Differences
+      - user interaction is handled by controller, and view for the others
+      - Code bhind the view
+        - minimal for MVC and MVVP and yes for Yes for MVP
+      - View aware of Model
+        MVC yes, and MVP Yes if supervising controller
+      - Data Binding
+        - MVC is basic, MVP is basic(supervising controller), or no(Passive view), MVVM(Advanced)

@@ -49,6 +49,15 @@
   - `Lock ordering` - ensure locks are always taken in the same order any thread
   - `Lock timeout` - put a time out on lcok attempts
     - if thread cannot acquire locks within alloted time, thread will release all locks, wait a random amount of time and try again
+  - use context manager instead of try catch
+
+### Starvation
+- a process or thread is prepetually denied the resource it needs
+
+### LiveLock
+
+- Multiple threads or processes are actively responding to each other to resolve conflict, but it prevents them from making progress
+
     
 
 

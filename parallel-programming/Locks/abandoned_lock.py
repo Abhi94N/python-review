@@ -11,8 +11,6 @@ sushi_count = 500
 def philosopher(name, first_chopstick, second_chopstick):
     global sushi_count
     while sushi_count > 0: # eat sushi until it's all gone
-        first_chopstick.acquire()
-        second_chopstick.acquire()
 
         # try:
         #     if sushi_count > 0:
